@@ -1,0 +1,921 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49E6654ED71966C448688259 /* Pods_FlashCardReviewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F5FE5EB603D68CCE38FBD /* Pods_FlashCardReviewTests.framework */; };
+		B5D1788D6F8454F0471FE407 /* Pods_FlashCardReviewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376E050C7AE96DD136DA1B04 /* Pods_FlashCardReviewUITests.framework */; };
+		E25BB57720324834004489C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB57620324834004489C9 /* AppDelegate.swift */; };
+		E25BB57F20324834004489C9 /* FlashCardReview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E25BB57D20324834004489C9 /* FlashCardReview.xcdatamodeld */; };
+		E25BB58120324834004489C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25BB58020324834004489C9 /* Assets.xcassets */; };
+		E25BB58420324834004489C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25BB58220324834004489C9 /* LaunchScreen.storyboard */; };
+		E25BB58F20324834004489C9 /* FlashCardReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB58E20324834004489C9 /* FlashCardReviewTests.swift */; };
+		E25BB59A20324834004489C9 /* FlashCardReviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB59920324834004489C9 /* FlashCardReviewUITests.swift */; };
+		E25BB5AC20324A5B004489C9 /* FlashCardCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB5AB20324A5B004489C9 /* FlashCardCategoriesViewController.swift */; };
+		E25BB5AE20324A79004489C9 /* NewFlashCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB5AD20324A79004489C9 /* NewFlashCardViewController.swift */; };
+		E25BB5B220324ADC004489C9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB5B120324ADC004489C9 /* ProfileViewController.swift */; };
+		E25BB5B420324B1A004489C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB5B320324B1A004489C9 /* LoginViewController.swift */; };
+		E25BB5BE20324FDF004489C9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB5BD20324FDF004489C9 /* ProfileView.swift */; };
+		E25BB5C02032500B004489C9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB5BF2032500B004489C9 /* LoginView.swift */; };
+		E2D77C3B203676B6005886BE /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D77C3A203676B6005886BE /* DBService.swift */; };
+		E2D77C3D20367844005886BE /* DBService+Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D77C3C20367844005886BE /* DBService+Users.swift */; };
+		E2D77C3F20367971005886BE /* DBService+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D77C3E20367971005886BE /* DBService+Categories.swift */; };
+		E2D77C4120367BB2005886BE /* DBService+FlashCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D77C4020367BB2005886BE /* DBService+FlashCards.swift */; };
+		E2D77C4320369A88005886BE /* FlashCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D77C4220369A88005886BE /* FlashCardCollectionViewCell.swift */; };
+		E2DC2B7220362C41008FC4A1 /* FavFlashCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B7120362C41008FC4A1 /* FavFlashCardsViewController.swift */; };
+		E2DC2B7420362C59008FC4A1 /* FavFlashCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B7320362C59008FC4A1 /* FavFlashCardsView.swift */; };
+		E2DC2B7620362F5F008FC4A1 /* FlashCardCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B7520362F5F008FC4A1 /* FlashCardCategory.swift */; };
+		E2DC2B78203645EB008FC4A1 /* NewFlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B77203645EB008FC4A1 /* NewFlashCardView.swift */; };
+		E2DC2B7A20364749008FC4A1 /* FlashCardCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B7920364749008FC4A1 /* FlashCardCategoriesView.swift */; };
+		E2DC2B7C20364794008FC4A1 /* FlashCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B7B20364794008FC4A1 /* FlashCardsViewController.swift */; };
+		E2DC2B7E20364812008FC4A1 /* FlashCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B7D20364812008FC4A1 /* FlashCardsView.swift */; };
+		E2FEC9C9203291BF005123B5 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEC9C8203291BF005123B5 /* FirebaseAuthService.swift */; };
+		E2FEC9CB20329754005123B5 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEC9CA20329754005123B5 /* FlashCard.swift */; };
+		E2FEC9CD20329A4F005123B5 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEC9CC20329A4F005123B5 /* AppUser.swift */; };
+		E2FEC9CF20329E96005123B5 /* LoginContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEC9CE20329E96005123B5 /* LoginContainerView.swift */; };
+		E2FEC9D320329EC0005123B5 /* CreateUserContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEC9D220329EC0005123B5 /* CreateUserContainerView.swift */; };
+		E2FEC9D82032A9F3005123B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2FEC9D72032A9F3005123B5 /* GoogleService-Info.plist */; };
+		E339E10C6C28C84E4308927C /* Pods_FlashCardReview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C80B6CD2EE37DF256EA3F41 /* Pods_FlashCardReview.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E25BB58B20324834004489C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E25BB56B20324834004489C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E25BB57220324834004489C9;
+			remoteInfo = FlashCardReview;
+		};
+		E25BB59620324834004489C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E25BB56B20324834004489C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E25BB57220324834004489C9;
+			remoteInfo = FlashCardReview;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07B533DBACB02323FFF07DE2 /* Pods-FlashCardReviewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCardReviewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCardReviewUITests/Pods-FlashCardReviewUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1BD78D9DD452D601D2361F12 /* Pods-FlashCardReviewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCardReviewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCardReviewUITests/Pods-FlashCardReviewUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1D3020CA6E17B026B803D060 /* Pods-FlashCardReviewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCardReviewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCardReviewTests/Pods-FlashCardReviewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		376E050C7AE96DD136DA1B04 /* Pods_FlashCardReviewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCardReviewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C80B6CD2EE37DF256EA3F41 /* Pods_FlashCardReview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCardReview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC7F5FE5EB603D68CCE38FBD /* Pods_FlashCardReviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCardReviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5CBE77064BE3401F3F37447 /* Pods-FlashCardReview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCardReview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCardReview/Pods-FlashCardReview.debug.xcconfig"; sourceTree = "<group>"; };
+		E25BB57320324834004489C9 /* FlashCardReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCardReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E25BB57620324834004489C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E25BB57E20324834004489C9 /* FlashCardReview.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlashCardReview.xcdatamodel; sourceTree = "<group>"; };
+		E25BB58020324834004489C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E25BB58320324834004489C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E25BB58520324834004489C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E25BB58A20324834004489C9 /* FlashCardReviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCardReviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E25BB58E20324834004489C9 /* FlashCardReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardReviewTests.swift; sourceTree = "<group>"; };
+		E25BB59020324834004489C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E25BB59520324834004489C9 /* FlashCardReviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashCardReviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E25BB59920324834004489C9 /* FlashCardReviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardReviewUITests.swift; sourceTree = "<group>"; };
+		E25BB59B20324834004489C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E25BB5AB20324A5B004489C9 /* FlashCardCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardCategoriesViewController.swift; sourceTree = "<group>"; };
+		E25BB5AD20324A79004489C9 /* NewFlashCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashCardViewController.swift; sourceTree = "<group>"; };
+		E25BB5B120324ADC004489C9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E25BB5B320324B1A004489C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E25BB5BD20324FDF004489C9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		E25BB5BF2032500B004489C9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E2D77C3A203676B6005886BE /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		E2D77C3C20367844005886BE /* DBService+Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+Users.swift"; sourceTree = "<group>"; };
+		E2D77C3E20367971005886BE /* DBService+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+Categories.swift"; sourceTree = "<group>"; };
+		E2D77C4020367BB2005886BE /* DBService+FlashCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+FlashCards.swift"; sourceTree = "<group>"; };
+		E2D77C4220369A88005886BE /* FlashCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		E2DC2B7120362C41008FC4A1 /* FavFlashCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavFlashCardsViewController.swift; sourceTree = "<group>"; };
+		E2DC2B7320362C59008FC4A1 /* FavFlashCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavFlashCardsView.swift; sourceTree = "<group>"; };
+		E2DC2B7520362F5F008FC4A1 /* FlashCardCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardCategory.swift; sourceTree = "<group>"; };
+		E2DC2B77203645EB008FC4A1 /* NewFlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashCardView.swift; sourceTree = "<group>"; };
+		E2DC2B7920364749008FC4A1 /* FlashCardCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardCategoriesView.swift; sourceTree = "<group>"; };
+		E2DC2B7B20364794008FC4A1 /* FlashCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsViewController.swift; sourceTree = "<group>"; };
+		E2DC2B7D20364812008FC4A1 /* FlashCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsView.swift; sourceTree = "<group>"; };
+		E2FEC9C8203291BF005123B5 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		E2FEC9CA20329754005123B5 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
+		E2FEC9CC20329A4F005123B5 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		E2FEC9CE20329E96005123B5 /* LoginContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContainerView.swift; sourceTree = "<group>"; };
+		E2FEC9D220329EC0005123B5 /* CreateUserContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserContainerView.swift; sourceTree = "<group>"; };
+		E2FEC9D72032A9F3005123B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E6B2B79E24B75E7E1EF581AF /* Pods-FlashCardReview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCardReview.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCardReview/Pods-FlashCardReview.release.xcconfig"; sourceTree = "<group>"; };
+		ED0D7CF6D7AEE69D99C56839 /* Pods-FlashCardReviewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCardReviewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCardReviewTests/Pods-FlashCardReviewTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E25BB57020324834004489C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E339E10C6C28C84E4308927C /* Pods_FlashCardReview.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25BB58720324834004489C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49E6654ED71966C448688259 /* Pods_FlashCardReviewTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25BB59220324834004489C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5D1788D6F8454F0471FE407 /* Pods_FlashCardReviewUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03A24B35185A2C733CBDB70F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5CBE77064BE3401F3F37447 /* Pods-FlashCardReview.debug.xcconfig */,
+				E6B2B79E24B75E7E1EF581AF /* Pods-FlashCardReview.release.xcconfig */,
+				1D3020CA6E17B026B803D060 /* Pods-FlashCardReviewTests.debug.xcconfig */,
+				ED0D7CF6D7AEE69D99C56839 /* Pods-FlashCardReviewTests.release.xcconfig */,
+				07B533DBACB02323FFF07DE2 /* Pods-FlashCardReviewUITests.debug.xcconfig */,
+				1BD78D9DD452D601D2361F12 /* Pods-FlashCardReviewUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		280595BD53A88B2703EE3893 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C80B6CD2EE37DF256EA3F41 /* Pods_FlashCardReview.framework */,
+				BC7F5FE5EB603D68CCE38FBD /* Pods_FlashCardReviewTests.framework */,
+				376E050C7AE96DD136DA1B04 /* Pods_FlashCardReviewUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E25BB56A20324834004489C9 = {
+			isa = PBXGroup;
+			children = (
+				E25BB57520324834004489C9 /* FlashCardReview */,
+				E25BB58D20324834004489C9 /* FlashCardReviewTests */,
+				E25BB59820324834004489C9 /* FlashCardReviewUITests */,
+				E25BB57420324834004489C9 /* Products */,
+				03A24B35185A2C733CBDB70F /* Pods */,
+				280595BD53A88B2703EE3893 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E25BB57420324834004489C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E25BB57320324834004489C9 /* FlashCardReview.app */,
+				E25BB58A20324834004489C9 /* FlashCardReviewTests.xctest */,
+				E25BB59520324834004489C9 /* FlashCardReviewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E25BB57520324834004489C9 /* FlashCardReview */ = {
+			isa = PBXGroup;
+			children = (
+				E2FEC9C7203291A1005123B5 /* Services */,
+				E25BB5AA20324887004489C9 /* Views */,
+				E25BB5A82032486D004489C9 /* View Controllers */,
+				E25BB5A920324877004489C9 /* Models */,
+				E25BB5A720324857004489C9 /* Supporting Files */,
+				E25BB58520324834004489C9 /* Info.plist */,
+				E2FEC9D72032A9F3005123B5 /* GoogleService-Info.plist */,
+				E25BB57D20324834004489C9 /* FlashCardReview.xcdatamodeld */,
+			);
+			path = FlashCardReview;
+			sourceTree = "<group>";
+		};
+		E25BB58D20324834004489C9 /* FlashCardReviewTests */ = {
+			isa = PBXGroup;
+			children = (
+				E25BB58E20324834004489C9 /* FlashCardReviewTests.swift */,
+				E25BB59020324834004489C9 /* Info.plist */,
+			);
+			path = FlashCardReviewTests;
+			sourceTree = "<group>";
+		};
+		E25BB59820324834004489C9 /* FlashCardReviewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E25BB59920324834004489C9 /* FlashCardReviewUITests.swift */,
+				E25BB59B20324834004489C9 /* Info.plist */,
+			);
+			path = FlashCardReviewUITests;
+			sourceTree = "<group>";
+		};
+		E25BB5A720324857004489C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E25BB57620324834004489C9 /* AppDelegate.swift */,
+				E25BB58020324834004489C9 /* Assets.xcassets */,
+				E25BB58220324834004489C9 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E25BB5A82032486D004489C9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E25BB5AB20324A5B004489C9 /* FlashCardCategoriesViewController.swift */,
+				E2DC2B7B20364794008FC4A1 /* FlashCardsViewController.swift */,
+				E25BB5AD20324A79004489C9 /* NewFlashCardViewController.swift */,
+				E2DC2B7120362C41008FC4A1 /* FavFlashCardsViewController.swift */,
+				E25BB5B120324ADC004489C9 /* ProfileViewController.swift */,
+				E25BB5B320324B1A004489C9 /* LoginViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E25BB5A920324877004489C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2FEC9CA20329754005123B5 /* FlashCard.swift */,
+				E2DC2B7520362F5F008FC4A1 /* FlashCardCategory.swift */,
+				E2FEC9CC20329A4F005123B5 /* AppUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E25BB5AA20324887004489C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2DC2B7920364749008FC4A1 /* FlashCardCategoriesView.swift */,
+				E2DC2B7D20364812008FC4A1 /* FlashCardsView.swift */,
+				E2DC2B77203645EB008FC4A1 /* NewFlashCardView.swift */,
+				E2DC2B7320362C59008FC4A1 /* FavFlashCardsView.swift */,
+				E25BB5BD20324FDF004489C9 /* ProfileView.swift */,
+				E25BB5BF2032500B004489C9 /* LoginView.swift */,
+				E2FEC9CE20329E96005123B5 /* LoginContainerView.swift */,
+				E2FEC9D220329EC0005123B5 /* CreateUserContainerView.swift */,
+				E2D77C4220369A88005886BE /* FlashCardCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E2D77C39203676A2005886BE /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				E2D77C3A203676B6005886BE /* DBService.swift */,
+				E2D77C3C20367844005886BE /* DBService+Users.swift */,
+				E2D77C3E20367971005886BE /* DBService+Categories.swift */,
+				E2D77C4020367BB2005886BE /* DBService+FlashCards.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		E2FEC9C7203291A1005123B5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E2FEC9C8203291BF005123B5 /* FirebaseAuthService.swift */,
+				E2D77C39203676A2005886BE /* Database */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E25BB57220324834004489C9 /* FlashCardReview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E25BB59E20324834004489C9 /* Build configuration list for PBXNativeTarget "FlashCardReview" */;
+			buildPhases = (
+				BDDD820CA6AF24A7F64B76EE /* [CP] Check Pods Manifest.lock */,
+				E25BB56F20324834004489C9 /* Sources */,
+				E25BB57020324834004489C9 /* Frameworks */,
+				E25BB57120324834004489C9 /* Resources */,
+				78A1C7BC1C32BCC5BC1FC13E /* [CP] Embed Pods Frameworks */,
+				018826E757A29F5B392B1234 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlashCardReview;
+			productName = FlashCardReview;
+			productReference = E25BB57320324834004489C9 /* FlashCardReview.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E25BB58920324834004489C9 /* FlashCardReviewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E25BB5A120324834004489C9 /* Build configuration list for PBXNativeTarget "FlashCardReviewTests" */;
+			buildPhases = (
+				3E1AC0E43D93F383B3C9C3EF /* [CP] Check Pods Manifest.lock */,
+				E25BB58620324834004489C9 /* Sources */,
+				E25BB58720324834004489C9 /* Frameworks */,
+				E25BB58820324834004489C9 /* Resources */,
+				3FB418073DB02233F8028EFC /* [CP] Embed Pods Frameworks */,
+				DE978BBCCC8F440EBA6841DA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E25BB58C20324834004489C9 /* PBXTargetDependency */,
+			);
+			name = FlashCardReviewTests;
+			productName = FlashCardReviewTests;
+			productReference = E25BB58A20324834004489C9 /* FlashCardReviewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E25BB59420324834004489C9 /* FlashCardReviewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E25BB5A420324834004489C9 /* Build configuration list for PBXNativeTarget "FlashCardReviewUITests" */;
+			buildPhases = (
+				7B44F2212D90BAB9C6BAAF27 /* [CP] Check Pods Manifest.lock */,
+				E25BB59120324834004489C9 /* Sources */,
+				E25BB59220324834004489C9 /* Frameworks */,
+				E25BB59320324834004489C9 /* Resources */,
+				49B00B7693F58357D795836B /* [CP] Embed Pods Frameworks */,
+				DA8B65289A939E376C5DE54C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E25BB59720324834004489C9 /* PBXTargetDependency */,
+			);
+			name = FlashCardReviewUITests;
+			productName = FlashCardReviewUITests;
+			productReference = E25BB59520324834004489C9 /* FlashCardReviewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E25BB56B20324834004489C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Luis Calle";
+				TargetAttributes = {
+					E25BB57220324834004489C9 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					E25BB58920324834004489C9 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E25BB57220324834004489C9;
+					};
+					E25BB59420324834004489C9 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E25BB57220324834004489C9;
+					};
+				};
+			};
+			buildConfigurationList = E25BB56E20324834004489C9 /* Build configuration list for PBXProject "FlashCardReview" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E25BB56A20324834004489C9;
+			productRefGroup = E25BB57420324834004489C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E25BB57220324834004489C9 /* FlashCardReview */,
+				E25BB58920324834004489C9 /* FlashCardReviewTests */,
+				E25BB59420324834004489C9 /* FlashCardReviewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E25BB57120324834004489C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E25BB58420324834004489C9 /* LaunchScreen.storyboard in Resources */,
+				E25BB58120324834004489C9 /* Assets.xcassets in Resources */,
+				E2FEC9D82032A9F3005123B5 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25BB58820324834004489C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25BB59320324834004489C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		018826E757A29F5B392B1234 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReview/Pods-FlashCardReview-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E1AC0E43D93F383B3C9C3EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlashCardReviewTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FB418073DB02233F8028EFC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReviewTests/Pods-FlashCardReviewTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49B00B7693F58357D795836B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReviewUITests/Pods-FlashCardReviewUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78A1C7BC1C32BCC5BC1FC13E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReview/Pods-FlashCardReview-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReview/Pods-FlashCardReview-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B44F2212D90BAB9C6BAAF27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlashCardReviewUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDDD820CA6AF24A7F64B76EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlashCardReview-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA8B65289A939E376C5DE54C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReviewUITests/Pods-FlashCardReviewUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE978BBCCC8F440EBA6841DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReviewTests/Pods-FlashCardReviewTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E25BB56F20324834004489C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2FEC9CD20329A4F005123B5 /* AppUser.swift in Sources */,
+				E25BB5B420324B1A004489C9 /* LoginViewController.swift in Sources */,
+				E25BB5B220324ADC004489C9 /* ProfileViewController.swift in Sources */,
+				E2DC2B7C20364794008FC4A1 /* FlashCardsViewController.swift in Sources */,
+				E2D77C4320369A88005886BE /* FlashCardCollectionViewCell.swift in Sources */,
+				E2DC2B7A20364749008FC4A1 /* FlashCardCategoriesView.swift in Sources */,
+				E25BB5AE20324A79004489C9 /* NewFlashCardViewController.swift in Sources */,
+				E25BB57720324834004489C9 /* AppDelegate.swift in Sources */,
+				E2FEC9D320329EC0005123B5 /* CreateUserContainerView.swift in Sources */,
+				E2FEC9C9203291BF005123B5 /* FirebaseAuthService.swift in Sources */,
+				E2DC2B7220362C41008FC4A1 /* FavFlashCardsViewController.swift in Sources */,
+				E2D77C3D20367844005886BE /* DBService+Users.swift in Sources */,
+				E2DC2B7620362F5F008FC4A1 /* FlashCardCategory.swift in Sources */,
+				E25BB5C02032500B004489C9 /* LoginView.swift in Sources */,
+				E25BB5AC20324A5B004489C9 /* FlashCardCategoriesViewController.swift in Sources */,
+				E2DC2B7E20364812008FC4A1 /* FlashCardsView.swift in Sources */,
+				E2DC2B78203645EB008FC4A1 /* NewFlashCardView.swift in Sources */,
+				E2FEC9CF20329E96005123B5 /* LoginContainerView.swift in Sources */,
+				E2DC2B7420362C59008FC4A1 /* FavFlashCardsView.swift in Sources */,
+				E2D77C4120367BB2005886BE /* DBService+FlashCards.swift in Sources */,
+				E2D77C3B203676B6005886BE /* DBService.swift in Sources */,
+				E25BB57F20324834004489C9 /* FlashCardReview.xcdatamodeld in Sources */,
+				E2D77C3F20367971005886BE /* DBService+Categories.swift in Sources */,
+				E25BB5BE20324FDF004489C9 /* ProfileView.swift in Sources */,
+				E2FEC9CB20329754005123B5 /* FlashCard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25BB58620324834004489C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E25BB58F20324834004489C9 /* FlashCardReviewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25BB59120324834004489C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E25BB59A20324834004489C9 /* FlashCardReviewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E25BB58C20324834004489C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E25BB57220324834004489C9 /* FlashCardReview */;
+			targetProxy = E25BB58B20324834004489C9 /* PBXContainerItemProxy */;
+		};
+		E25BB59720324834004489C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E25BB57220324834004489C9 /* FlashCardReview */;
+			targetProxy = E25BB59620324834004489C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E25BB58220324834004489C9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E25BB58320324834004489C9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E25BB59C20324834004489C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E25BB59D20324834004489C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E25BB59F20324834004489C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5CBE77064BE3401F3F37447 /* Pods-FlashCardReview.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DSMJ37658F;
+				INFOPLIST_FILE = FlashCardReview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Lucho.FlashCardReview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E25BB5A020324834004489C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6B2B79E24B75E7E1EF581AF /* Pods-FlashCardReview.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DSMJ37658F;
+				INFOPLIST_FILE = FlashCardReview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Lucho.FlashCardReview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E25BB5A220324834004489C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D3020CA6E17B026B803D060 /* Pods-FlashCardReviewTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlashCardReviewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Lucho.FlashCardReviewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashCardReview.app/FlashCardReview";
+			};
+			name = Debug;
+		};
+		E25BB5A320324834004489C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED0D7CF6D7AEE69D99C56839 /* Pods-FlashCardReviewTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlashCardReviewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Lucho.FlashCardReviewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashCardReview.app/FlashCardReview";
+			};
+			name = Release;
+		};
+		E25BB5A520324834004489C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07B533DBACB02323FFF07DE2 /* Pods-FlashCardReviewUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlashCardReviewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Lucho.FlashCardReviewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlashCardReview;
+			};
+			name = Debug;
+		};
+		E25BB5A620324834004489C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BD78D9DD452D601D2361F12 /* Pods-FlashCardReviewUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FlashCardReviewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Lucho.FlashCardReviewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlashCardReview;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E25BB56E20324834004489C9 /* Build configuration list for PBXProject "FlashCardReview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E25BB59C20324834004489C9 /* Debug */,
+				E25BB59D20324834004489C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E25BB59E20324834004489C9 /* Build configuration list for PBXNativeTarget "FlashCardReview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E25BB59F20324834004489C9 /* Debug */,
+				E25BB5A020324834004489C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E25BB5A120324834004489C9 /* Build configuration list for PBXNativeTarget "FlashCardReviewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E25BB5A220324834004489C9 /* Debug */,
+				E25BB5A320324834004489C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E25BB5A420324834004489C9 /* Build configuration list for PBXNativeTarget "FlashCardReviewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E25BB5A520324834004489C9 /* Debug */,
+				E25BB5A620324834004489C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E25BB57D20324834004489C9 /* FlashCardReview.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E25BB57E20324834004489C9 /* FlashCardReview.xcdatamodel */,
+			);
+			currentVersion = E25BB57E20324834004489C9 /* FlashCardReview.xcdatamodel */;
+			path = FlashCardReview.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E25BB56B20324834004489C9 /* Project object */;
+}
