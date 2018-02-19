@@ -14,6 +14,12 @@ class ProfileViewController: UIViewController {
     
     let firebaseAuthService = FirebaseAuthService()
     
+    private var userFlashCards = [FlashCard]() {
+        didSet {
+            profileView.userFlashCardscollectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         firebaseAuthService.delegate = self
@@ -21,12 +27,23 @@ class ProfileViewController: UIViewController {
         profileView.userFlashCardscollectionView.dataSource = self
         view.addSubview(profileView)
         setupNavBar()
+        loadUserFlashCards()
     }
 
     private func setupNavBar() {
         navigationItem.title = FirebaseAuthService.getCurrentUser()!.displayName
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logout))
+    }
+    
+    private func loadUserFlashCards() {
+        DBService.manager.loadUserFlashCards { (dbUserFlashCards) in
+            if let dbUserFlashCards = dbUserFlashCards {
+                self.userFlashCards = dbUserFlashCards
+            } else {
+                print("Error retrieving user flash cards")
+            }
+        }
     }
     
     @objc private func logout() {
@@ -62,12 +79,28 @@ extension ProfileViewController: FirebaseAuthServiceDelegate {
 }
 
 extension ProfileViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        var numOfSections: Int = 0
+        if userFlashCards.count > 0 {
+            profileView.userFlashCardscollectionView.backgroundView = nil
+            numOfSections = 1
+        } else {
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: profileView.userFlashCardscollectionView.bounds.size.width, height: profileView.userFlashCardscollectionView.bounds.size.height))
+            noDataLabel.text = "You haven't created any FlashCards Yet"
+            noDataLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+            noDataLabel.textAlignment = .center
+            profileView.userFlashCardscollectionView.backgroundView = noDataLabel
+        }
+        return numOfSections
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return userFlashCards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let flashCardCell = collectionView.dequeueReusableCell(withReuseIdentifier: "flashCardCell", for: indexPath) as! FlashCardCollectionViewCell
+        let userFlashCard = userFlashCards[indexPath.row]
+        flashCardCell.configureCell(flashCard: userFlashCard)
         return flashCardCell
     }
     
@@ -75,5 +108,8 @@ extension ProfileViewController: UICollectionViewDataSource {
 }
 
 extension ProfileViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //let flashCardCell = collectionView.cellForItem(at: indexPath) as! FlashCardCollectionViewCell
+        //UIView.transition(with: flashCardCell, duration: 0.3, options: .transitionFlipFromBottom, animations: nil, completion: nil)
+    }
 }

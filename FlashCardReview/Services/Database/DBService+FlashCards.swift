@@ -22,6 +22,7 @@ extension DBService {
         let childByAutoId = DBService.manager.getFlashCards().childByAutoId()
         childByAutoId.setValue(["flashCardID" : childByAutoId.key,
                                 "userID"      : FirebaseAuthService.getCurrentUser()!.uid,
+                                "username"    : FirebaseAuthService.getCurrentUser()!.displayName,
                                 "question"    : question,
                                 "answer"      : answer,
                                 "categoryID"  : categoryID,
@@ -31,6 +32,40 @@ extension DBService {
                                     } else {
                                         print("flashCard added @ database reference: \(dbRef)")
                                     }
+        }
+    }
+    
+    public func loadAllFlashCards(with category: FlashCardCategory, completionHandler: @escaping ([FlashCard]?) -> Void) {
+        let ref = DBService.manager.getFlashCards()
+        ref.observe(.value) { (snapshot) in
+            var flashCards = [FlashCard]()
+            for child in snapshot.children {
+                let dataSnapshot = child as! DataSnapshot
+                if let dict = dataSnapshot.value as? [String: Any] {
+                    let flashCard = FlashCard.init(dict: dict)
+                    if flashCard.categoryID == category.categoryID {
+                        flashCards.append(flashCard)
+                    }
+                }
+            }
+            completionHandler(flashCards)
+        }
+    }
+    
+    public func loadUserFlashCards(completionHandler: @escaping ([FlashCard]?) -> Void) {
+        let ref = DBService.manager.getFlashCards()
+        ref.observe(.value) { (snapshot) in
+            var flashCards = [FlashCard]()
+            for child in snapshot.children {
+                let dataSnapshot = child as! DataSnapshot
+                if let dict = dataSnapshot.value as? [String: Any] {
+                    let flashCard = FlashCard.init(dict: dict)
+                    if flashCard.userID == FirebaseAuthService.getCurrentUser()!.uid {
+                        flashCards.append(flashCard)
+                    }
+                }
+            }
+            completionHandler(flashCards)
         }
     }
 }

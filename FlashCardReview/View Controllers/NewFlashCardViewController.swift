@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol NewFlashCardViewControllerDelegate: class {
+    func didAddNewFlashCard(_ newFlashCardViewController: NewFlashCardViewController)
+}
+
 class NewFlashCardViewController: UIViewController {
 
     private let newFlashCardView = NewFlashCardView()
     
     private var category: FlashCardCategory!
+    
+    public weak var delegate: NewFlashCardViewControllerDelegate?
     
     init(category: FlashCardCategory) {
         super.init(nibName: nil, bundle: nil)
@@ -44,9 +50,11 @@ class NewFlashCardViewController: UIViewController {
         let question = newFlashCardView.questionTextView.text
         let answer = newFlashCardView.answerTextView.text
         DBService.manager.addFlashCard(question: question!, answer: answer!, categoryID: category.categoryID)
-        DBService.manager.updateNumberOfFlashCards(in: category)
+        //DBService.manager.updateNumberOfFlashCards(in: category)
+        // TODO: fix updating number of flashcards
+        
         dismiss(animated: true) {
-            // TODO: implement protocols to let the user know if success or not adding new flashcard
+            self.delegate?.didAddNewFlashCard(self)
         }
     }
     

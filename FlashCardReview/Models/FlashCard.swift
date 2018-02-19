@@ -11,6 +11,7 @@ import Foundation
 class FlashCard {
     let flashCardID: String
     let userID: String
+    let username: String
     let question: String
     let answer: String
     let categoryID: String
@@ -19,6 +20,7 @@ class FlashCard {
     init(dict: [String : Any]) {
         flashCardID = dict["flashCardID"] as? String ?? ""
         userID = dict["userID"] as? String ?? ""
+        username = dict["username"] as? String ?? ""
         question = dict["question"] as? String ?? ""
         answer = dict["answer"] as? String ?? ""
         categoryID = dict["categoryID"] as? String ?? ""
