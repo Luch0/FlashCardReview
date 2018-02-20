@@ -18,9 +18,9 @@ class LoginView: UIView {
     
     lazy var appTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "FlashCards Review"
+        label.text = "FlashCards"
         //label.font = UIFont.systemFont(ofSize: 40, weight: .bold)
-        label.font = UIFont(name: "Futura-CondensedExtraBold", size: 40)
+        label.font = UIFont(name: "Futura-CondensedExtraBold", size: 50)
         label.textAlignment = .center
         return label
     }()

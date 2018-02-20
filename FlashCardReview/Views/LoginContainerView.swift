@@ -33,7 +33,7 @@ class LoginContainerView: UIView {
         let textField = UITextField()
         textField.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         textField.placeholder = "Enter e-mail address"
-        textField.text = "luiscalle@ac.c4q.nyc"
+        //textField.text = "luiscalle@ac.c4q.nyc"
         textField.layer.cornerRadius = 5
         textField.borderStyle = .roundedRect
         textField.layer.borderColor = UIColor.black.cgColor
@@ -47,7 +47,6 @@ class LoginContainerView: UIView {
         let textField = UITextField()
         textField.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         textField.placeholder = "Enter password"
-        textField.text = "testtest"
         textField.borderStyle = .roundedRect
         textField.layer.borderColor = UIColor.black.cgColor
         textField.isSecureTextEntry = true

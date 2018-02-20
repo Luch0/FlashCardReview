@@ -14,7 +14,7 @@ class CreateUserContainerView: UIView {
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = #imageLiteral(resourceName: "profilePlaceholder")
+        imageView.image = #imageLiteral(resourceName: "profileImagePlaceholder")
         return imageView
     }()
     
@@ -31,7 +31,7 @@ class CreateUserContainerView: UIView {
         let textField = UITextField()
         textField.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         textField.placeholder = "Enter first name"
-        textField.text = "Luis"
+        //textField.text = "Luis"
         textField.layer.cornerRadius = 5
         textField.borderStyle = .roundedRect
         textField.layer.borderColor = UIColor.black.cgColor
@@ -55,7 +55,7 @@ class CreateUserContainerView: UIView {
         let textField = UITextField()
         textField.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         textField.placeholder = "Enter last name"
-        textField.text = "Calle"
+        //textField.text = "Calle"
         textField.layer.cornerRadius = 5
         textField.borderStyle = .roundedRect
         textField.layer.borderColor = UIColor.black.cgColor
@@ -96,7 +96,7 @@ class CreateUserContainerView: UIView {
         let textField = UITextField()
         textField.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         textField.placeholder = "Enter e-mail address"
-        textField.text = "luiscalle@ac.c4q.nyc"
+        //textField.text = "luiscalle@ac.c4q.nyc"
         textField.layer.cornerRadius = 5
         textField.borderStyle = .roundedRect
         textField.layer.borderColor = UIColor.black.cgColor
@@ -110,7 +110,6 @@ class CreateUserContainerView: UIView {
         let textField = UITextField()
         textField.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         textField.placeholder = "Enter password"
-        textField.text = "testtest"
         textField.borderStyle = .roundedRect
         textField.layer.borderColor = UIColor.black.cgColor
         textField.isSecureTextEntry = true
@@ -122,7 +121,6 @@ class CreateUserContainerView: UIView {
         let textField = UITextField()
         textField.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         textField.placeholder = "Verify password"
-        textField.text = "testtest"
         textField.borderStyle = .roundedRect
         textField.layer.borderColor = UIColor.black.cgColor
         textField.isSecureTextEntry = true

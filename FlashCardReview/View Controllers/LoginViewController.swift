@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     let imagePicker = UIImagePickerController()
     
     let firebaseAuthService = FirebaseAuthService()
-    
+    var counter = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         loginView.createUserContainerView.isHidden = true
