@@ -49,10 +49,7 @@ class NewFlashCardViewController: UIViewController {
         // TODO: check for edge cases / bad input
         let question = newFlashCardView.questionTextView.text
         let answer = newFlashCardView.answerTextView.text
-        DBService.manager.addFlashCard(question: question!, answer: answer!, categoryID: category.categoryID)
-        //DBService.manager.updateNumberOfFlashCards(in: category)
-        // TODO: fix updating number of flashcards
-        
+        DBService.manager.addFlashCard(question: question!, answer: answer!, categoryID: category.categoryID)        
         dismiss(animated: true) {
             self.delegate?.didAddNewFlashCard(self)
         }

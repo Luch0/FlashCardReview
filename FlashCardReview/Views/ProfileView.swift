@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
+import Firebase
 
 class ProfileView: UIView {
     
@@ -21,7 +23,7 @@ class ProfileView: UIView {
     lazy var userProfileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = #imageLiteral(resourceName: "profilePlaceholder")
+        imageView.image = #imageLiteral(resourceName: "profileImagePlaceholder")
         return imageView
     }()
     
@@ -106,6 +108,14 @@ class ProfileView: UIView {
             make.centerX.equalTo(profileBGImageView.snp.centerX)
             make.width.equalTo(safeAreaLayoutGuide.snp.width).multipliedBy(0.25)
             make.height.equalTo(userProfileImageView.snp.width)
+        }
+    }
+    
+    public func configureProfileImages(for user: User) {
+        userProfileImageView.kf.indicatorType = .activity
+        DBService.manager.getUserImageURL(userID: user.uid) { (appUser) in
+            self.userProfileImageView.kf.setImage(with: URL(string: (appUser?.userImageURL)!), placeholder: #imageLiteral(resourceName: "profileImagePlaceholder"), options: nil, progressBlock: nil, completionHandler: { (image, error, cache, url) in
+            })
         }
     }
 

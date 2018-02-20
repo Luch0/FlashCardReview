@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class ProfileViewController: UIViewController {
 
@@ -26,7 +29,15 @@ class ProfileViewController: UIViewController {
         profileView.userFlashCardscollectionView.delegate = self
         profileView.userFlashCardscollectionView.dataSource = self
         view.addSubview(profileView)
+        profileView.configureProfileImages(for: FirebaseAuthService.getCurrentUser()!)
         setupNavBar()
+        loadUserFlashCards()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = FirebaseAuthService.getCurrentUser()!.displayName
+        profileView.configureProfileImages(for: FirebaseAuthService.getCurrentUser()!)
         loadUserFlashCards()
     }
 
@@ -67,8 +78,14 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: FirebaseAuthServiceDelegate {
     func didSignOut(_ authService: FirebaseAuthService) {
+        if FBSDKAccessToken.current() != nil {
+            let loginManager = FBSDKLoginManager()
+            loginManager.logOut()
+        }
+        userFlashCards.removeAll()
         let loginVC = LoginViewController()
         self.present(loginVC, animated: true) {
+            self.profileView.userProfileImageView.image = #imageLiteral(resourceName: "profileImagePlaceholder")
             let tabBarController: UITabBarController = self.tabBarController! as UITabBarController
             tabBarController.selectedIndex = 0
         }

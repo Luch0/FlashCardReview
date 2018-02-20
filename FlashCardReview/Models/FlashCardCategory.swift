@@ -13,7 +13,7 @@ struct FlashCardCategory {
     let categoryName: String
     let categoryID: String
     let dateCreated: String
-    let numOfFlashCards: Int
+    var numOfFlashCards: Int
     
     init(dict: [String : Any]) {
         userID = dict["userID"] as? String ?? ""
@@ -21,5 +21,9 @@ struct FlashCardCategory {
         categoryID = dict["categoryID"] as? String ?? ""
         dateCreated = dict["dateCreated"] as? String ?? ""
         numOfFlashCards = dict["numOfFlashCards"] as? Int ?? 0
+    }
+    
+    public mutating func addedNewFlashCard() {
+        self.numOfFlashCards = self.numOfFlashCards + 1
     }
 }

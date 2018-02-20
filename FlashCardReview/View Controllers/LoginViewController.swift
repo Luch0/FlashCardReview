@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class LoginViewController: UIViewController {
 
@@ -22,6 +24,7 @@ class LoginViewController: UIViewController {
         loginView.createUserContainerView.isHidden = true
         imagePicker.delegate = self
         firebaseAuthService.delegate = self
+        loginView.facebookLoginButton.delegate = self
         view.addSubview(loginView)
         setupButtonsActions()
         setupProfileImageGestureRecognizer()
@@ -35,6 +38,7 @@ class LoginViewController: UIViewController {
         loginView.createUserContainerView.signUpButton.addTarget(self, action: #selector(signUp), for: .touchUpInside)
         loginView.loginContainerView.loginButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
         loginView.loginContainerView.forgotPasswordButton.addTarget(self, action: #selector(forgotPassword), for: .touchUpInside)
+    
     }
     
     @objc private func showLogin() {
@@ -83,7 +87,8 @@ class LoginViewController: UIViewController {
         }
         let fName = loginView.createUserContainerView.firstNameTextField.text
         let lname = loginView.createUserContainerView.lastNameTextField.text
-        firebaseAuthService.createUser(email: emailText, password: passwordText, firstName: fName ?? "", lastName: lname ?? "")
+        let userImage = loginView.createUserContainerView.profileImageView.image
+        firebaseAuthService.createUser(email: emailText, password: passwordText, firstName: fName ?? "", lastName: lname ?? "", userImage: userImage ?? #imageLiteral(resourceName: "profilePlaceholder"))
     }
     
     @objc private func signIn() {
@@ -168,7 +173,6 @@ extension LoginViewController: FirebaseAuthServiceDelegate {
                 self.showAlert(title: "Verification Sent", message: "Please verify email")
                 self.showLogin()
                 self.clearSignUpFields()
-                self.firebaseAuthService.signOut()
             }
         })
     }
@@ -187,6 +191,15 @@ extension LoginViewController: FirebaseAuthServiceDelegate {
     }
     
     func didFailSignIn(_ authService: FirebaseAuthService, error: Error) {
+        showAlert(title: error.localizedDescription, message: nil)
+    }
+    
+    func didSignInFacebook(_ authService: FirebaseAuthService, user: User) {
+        DBService.manager.addFacebookUser()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func didFailSignInFacebook(_ authService: FirebaseAuthService, error: Error) {
         showAlert(title: error.localizedDescription, message: nil)
     }
     
@@ -214,4 +227,15 @@ extension LoginViewController: UIImagePickerControllerDelegate, UINavigationCont
         self.dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension LoginViewController: FBSDKLoginButtonDelegate {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        firebaseAuthService.signInWithFacebook(with: credential)
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("logged out facebook")
+    }
 }

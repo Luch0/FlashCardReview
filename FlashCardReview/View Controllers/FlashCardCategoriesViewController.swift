@@ -9,8 +9,6 @@
 import UIKit
 
 class FlashCardCategoriesViewController: UIViewController {
-    
-    let firebaseAuthService = FirebaseAuthService()
 
     let flashCardCategoriesView = FlashCardCategoriesView()
     
@@ -31,7 +29,7 @@ class FlashCardCategoriesViewController: UIViewController {
     private func setupNavBar() {
         navigationItem.title = "Categories"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCategory))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "addCategoryIcon"), style: .plain, target: self, action: #selector(addCategory))
     }
     
     override func viewWillAppear(_ animated: Bool) {

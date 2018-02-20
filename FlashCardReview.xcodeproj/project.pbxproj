@@ -21,13 +21,13 @@
 		E25BB5B420324B1A004489C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB5B320324B1A004489C9 /* LoginViewController.swift */; };
 		E25BB5BE20324FDF004489C9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB5BD20324FDF004489C9 /* ProfileView.swift */; };
 		E25BB5C02032500B004489C9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB5BF2032500B004489C9 /* LoginView.swift */; };
+		E2D686BF203B694D00AD6AD9 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D686BE203B694D00AD6AD9 /* StorageService.swift */; };
+		E2D686C1203B6C9700AD6AD9 /* StorageService+UserImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D686C0203B6C9700AD6AD9 /* StorageService+UserImage.swift */; };
 		E2D77C3B203676B6005886BE /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D77C3A203676B6005886BE /* DBService.swift */; };
 		E2D77C3D20367844005886BE /* DBService+Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D77C3C20367844005886BE /* DBService+Users.swift */; };
 		E2D77C3F20367971005886BE /* DBService+Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D77C3E20367971005886BE /* DBService+Categories.swift */; };
 		E2D77C4120367BB2005886BE /* DBService+FlashCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D77C4020367BB2005886BE /* DBService+FlashCards.swift */; };
 		E2D77C4320369A88005886BE /* FlashCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D77C4220369A88005886BE /* FlashCardCollectionViewCell.swift */; };
-		E2DC2B7220362C41008FC4A1 /* FavFlashCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B7120362C41008FC4A1 /* FavFlashCardsViewController.swift */; };
-		E2DC2B7420362C59008FC4A1 /* FavFlashCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B7320362C59008FC4A1 /* FavFlashCardsView.swift */; };
 		E2DC2B7620362F5F008FC4A1 /* FlashCardCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B7520362F5F008FC4A1 /* FlashCardCategory.swift */; };
 		E2DC2B78203645EB008FC4A1 /* NewFlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B77203645EB008FC4A1 /* NewFlashCardView.swift */; };
 		E2DC2B7A20364749008FC4A1 /* FlashCardCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DC2B7920364749008FC4A1 /* FlashCardCategoriesView.swift */; };
@@ -85,13 +85,13 @@
 		E25BB5B320324B1A004489C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E25BB5BD20324FDF004489C9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E25BB5BF2032500B004489C9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E2D686BE203B694D00AD6AD9 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		E2D686C0203B6C9700AD6AD9 /* StorageService+UserImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+UserImage.swift"; sourceTree = "<group>"; };
 		E2D77C3A203676B6005886BE /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		E2D77C3C20367844005886BE /* DBService+Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+Users.swift"; sourceTree = "<group>"; };
 		E2D77C3E20367971005886BE /* DBService+Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+Categories.swift"; sourceTree = "<group>"; };
 		E2D77C4020367BB2005886BE /* DBService+FlashCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+FlashCards.swift"; sourceTree = "<group>"; };
 		E2D77C4220369A88005886BE /* FlashCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardCollectionViewCell.swift; sourceTree = "<group>"; };
-		E2DC2B7120362C41008FC4A1 /* FavFlashCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavFlashCardsViewController.swift; sourceTree = "<group>"; };
-		E2DC2B7320362C59008FC4A1 /* FavFlashCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavFlashCardsView.swift; sourceTree = "<group>"; };
 		E2DC2B7520362F5F008FC4A1 /* FlashCardCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardCategory.swift; sourceTree = "<group>"; };
 		E2DC2B77203645EB008FC4A1 /* NewFlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFlashCardView.swift; sourceTree = "<group>"; };
 		E2DC2B7920364749008FC4A1 /* FlashCardCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardCategoriesView.swift; sourceTree = "<group>"; };
@@ -229,7 +229,6 @@
 				E25BB5AB20324A5B004489C9 /* FlashCardCategoriesViewController.swift */,
 				E2DC2B7B20364794008FC4A1 /* FlashCardsViewController.swift */,
 				E25BB5AD20324A79004489C9 /* NewFlashCardViewController.swift */,
-				E2DC2B7120362C41008FC4A1 /* FavFlashCardsViewController.swift */,
 				E25BB5B120324ADC004489C9 /* ProfileViewController.swift */,
 				E25BB5B320324B1A004489C9 /* LoginViewController.swift */,
 			);
@@ -252,7 +251,6 @@
 				E2DC2B7920364749008FC4A1 /* FlashCardCategoriesView.swift */,
 				E2DC2B7D20364812008FC4A1 /* FlashCardsView.swift */,
 				E2DC2B77203645EB008FC4A1 /* NewFlashCardView.swift */,
-				E2DC2B7320362C59008FC4A1 /* FavFlashCardsView.swift */,
 				E25BB5BD20324FDF004489C9 /* ProfileView.swift */,
 				E25BB5BF2032500B004489C9 /* LoginView.swift */,
 				E2FEC9CE20329E96005123B5 /* LoginContainerView.swift */,
@@ -260,6 +258,23 @@
 				E2D77C4220369A88005886BE /* FlashCardCollectionViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E2D686BC203B690F00AD6AD9 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				E2D686BE203B694D00AD6AD9 /* StorageService.swift */,
+				E2D686C0203B6C9700AD6AD9 /* StorageService+UserImage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		E2D686BD203B691E00AD6AD9 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E2FEC9C8203291BF005123B5 /* FirebaseAuthService.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		E2D77C39203676A2005886BE /* Database */ = {
@@ -276,7 +291,8 @@
 		E2FEC9C7203291A1005123B5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E2FEC9C8203291BF005123B5 /* FirebaseAuthService.swift */,
+				E2D686BD203B691E00AD6AD9 /* Authentication */,
+				E2D686BC203B690F00AD6AD9 /* Storage */,
 				E2D77C39203676A2005886BE /* Database */,
 			);
 			path = Services;
@@ -491,6 +507,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReview/Pods-FlashCardReview-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -500,6 +523,13 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -592,10 +622,11 @@
 				E2D77C4320369A88005886BE /* FlashCardCollectionViewCell.swift in Sources */,
 				E2DC2B7A20364749008FC4A1 /* FlashCardCategoriesView.swift in Sources */,
 				E25BB5AE20324A79004489C9 /* NewFlashCardViewController.swift in Sources */,
+				E2D686BF203B694D00AD6AD9 /* StorageService.swift in Sources */,
 				E25BB57720324834004489C9 /* AppDelegate.swift in Sources */,
+				E2D686C1203B6C9700AD6AD9 /* StorageService+UserImage.swift in Sources */,
 				E2FEC9D320329EC0005123B5 /* CreateUserContainerView.swift in Sources */,
 				E2FEC9C9203291BF005123B5 /* FirebaseAuthService.swift in Sources */,
-				E2DC2B7220362C41008FC4A1 /* FavFlashCardsViewController.swift in Sources */,
 				E2D77C3D20367844005886BE /* DBService+Users.swift in Sources */,
 				E2DC2B7620362F5F008FC4A1 /* FlashCardCategory.swift in Sources */,
 				E25BB5C02032500B004489C9 /* LoginView.swift in Sources */,
@@ -603,7 +634,6 @@
 				E2DC2B7E20364812008FC4A1 /* FlashCardsView.swift in Sources */,
 				E2DC2B78203645EB008FC4A1 /* NewFlashCardView.swift in Sources */,
 				E2FEC9CF20329E96005123B5 /* LoginContainerView.swift in Sources */,
-				E2DC2B7420362C59008FC4A1 /* FavFlashCardsView.swift in Sources */,
 				E2D77C4120367BB2005886BE /* DBService+FlashCards.swift in Sources */,
 				E2D77C3B203676B6005886BE /* DBService.swift in Sources */,
 				E25BB57F20324834004489C9 /* FlashCardReview.xcdatamodeld in Sources */,

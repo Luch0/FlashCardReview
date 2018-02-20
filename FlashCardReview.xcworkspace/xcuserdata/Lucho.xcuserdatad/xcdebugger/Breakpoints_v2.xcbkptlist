@@ -9,13 +9,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlashCardReview/Services/Database/DBService+Categories.swift"
-            timestampString = "540588938.547281"
+            filePath = "FlashCardReview/Services/Storage/StorageService+UserImage.swift"
+            timestampString = "540781701.521275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "updateNumberOfFlashCards(in:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "storeUserImage(image:userID:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlashCardReview.StorageService.storeImage(image: __ObjC.UIImage, userID: Swift.String) -&gt; ()"
+                  moduleName = "FlashCardReview"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lucho/Desktop/iOS%20AccessCode/Projects/FlashCardReview/FlashCardReview/Services/Storage/StorageService+UserImage.swift"
+                  timestampString = "540767707.78649"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "999">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__ObjC.StorageTaskSnapshot) -&gt; () in FlashCardReview.StorageService.storeImage(image: __ObjC.UIImage, userID: Swift.String) -&gt; ()"
+                  moduleName = "FlashCardReview"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lucho/Desktop/iOS%20AccessCode/Projects/FlashCardReview/FlashCardReview/Services/Storage/StorageService+UserImage.swift"
+                  timestampString = "540767707.789893"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlashCardReview/Services/Storage/StorageService+UserImage.swift"
+            timestampString = "540781701.521612"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "storeUserImage(image:userID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

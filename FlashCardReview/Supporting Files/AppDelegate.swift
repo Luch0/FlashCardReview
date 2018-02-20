@@ -24,16 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let flashCardNavCon = UINavigationController(rootViewController: flashCardCategoriesVC)
         flashCardCategoriesVC.tabBarItem = UITabBarItem(title: "FlashCards", image: #imageLiteral(resourceName: "flashCards"), tag: 0)
         
-        let favFlashCardsVC = FavFlashCardsViewController()
-        let favFlashCardsNavCon = UINavigationController(rootViewController: favFlashCardsVC)
-        favFlashCardsVC.tabBarItem = UITabBarItem(title: "Favorites", image: #imageLiteral(resourceName: "bookmarkFlashCard"), tag: 1)
-        
         let profileVC = ProfileViewController()
         let profileViewNavCon = UINavigationController(rootViewController: profileVC)
-        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "profile"), tag: 2)
+        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "profile"), tag: 1)
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [flashCardNavCon, favFlashCardsNavCon, profileViewNavCon]
+        tabBarController.viewControllers = [flashCardNavCon, profileViewNavCon]
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = tabBarController

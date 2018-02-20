@@ -41,7 +41,7 @@ class FlashCardsViewController: UIViewController {
     private func setupNavBar() {
         navigationItem.title = category.categoryName
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewFlashCard))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "addFlashCard"), style: .plain, target: self, action: #selector(addNewFlashCard))
     }
     
     private func loadFlashCards() {
@@ -59,7 +59,6 @@ class FlashCardsViewController: UIViewController {
         newFlashCardVC.delegate = self
         let newFlashCardVCNavCon = UINavigationController(rootViewController: newFlashCardVC)
         newFlashCardVCNavCon.modalTransitionStyle = .coverVertical
-        //newFlashCardVCNavCon.modalPresentationStyle = .overCurrentContext
         newFlashCardVCNavCon.modalPresentationStyle = .overFullScreen
         present(newFlashCardVCNavCon,animated: true, completion: nil)
     }
@@ -73,6 +72,21 @@ class FlashCardsViewController: UIViewController {
 }
 
 extension FlashCardsViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        var numOfSections: Int = 0
+        if flashCards.count > 0 {
+            flashCardsView.flashCardscollectionView.backgroundView = nil
+            numOfSections = 1
+        } else {
+            let noDataLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: flashCardsView.flashCardscollectionView.bounds.size.width, height: flashCardsView.flashCardscollectionView.bounds.size.height))
+            noDataLabel.text = "Try adding a new FlashCard!"
+            noDataLabel.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+            noDataLabel.textAlignment = .center
+            flashCardsView.flashCardscollectionView.backgroundView = noDataLabel
+        }
+        return numOfSections
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return flashCards.count
     }
@@ -95,6 +109,7 @@ extension FlashCardsViewController: UICollectionViewDelegate {
 extension FlashCardsViewController: NewFlashCardViewControllerDelegate {
     func didAddNewFlashCard(_ newFlashCardViewController: NewFlashCardViewController) {
         DBService.manager.updateNumberOfFlashCards(in: category)
+        category.addedNewFlashCard()
         showAlert(title: "Success", message: "Added new FlashCard")
     }
 }
