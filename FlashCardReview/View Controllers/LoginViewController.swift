@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     let imagePicker = UIImagePickerController()
     
     let firebaseAuthService = FirebaseAuthService()
+    
     var counter = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,21 @@ class LoginViewController: UIViewController {
         imagePicker.delegate = self
         firebaseAuthService.delegate = self
         loginView.facebookLoginButton.delegate = self
+        setTextFieldsDelegates()
         view.addSubview(loginView)
         setupButtonsActions()
         setupProfileImageGestureRecognizer()
+    }
+    
+    private func setTextFieldsDelegates() {
+        loginView.createUserContainerView.firstNameTextField.delegate = self
+        loginView.createUserContainerView.lastNameTextField.delegate = self
+        loginView.createUserContainerView.emailLoginTextField.delegate = self
+        loginView.createUserContainerView.passwordTextField.delegate = self
+        loginView.createUserContainerView.verifyPasswordTextField.delegate = self
+        
+        loginView.loginContainerView.emailLoginTextField.delegate = self
+        loginView.loginContainerView.passwordTextField.delegate = self
     }
     
     private func setupButtonsActions() {
@@ -159,6 +172,8 @@ class LoginViewController: UIViewController {
     
 }
 
+
+// MARK:- Firebase Auth delegate functions
 extension LoginViewController: FirebaseAuthServiceDelegate {
     
     func didCreateUser(_ authService: FirebaseAuthService, user: User) {
@@ -195,6 +210,17 @@ extension LoginViewController: FirebaseAuthServiceDelegate {
     }
     
     func didSignInFacebook(_ authService: FirebaseAuthService, user: User) {
+        // TODO: Add facebook user info
+        
+//        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+//            if (error == nil){
+//                let fbDetails = result as! NSDictionary
+//                print(fbDetails)
+//            }
+//        })
+        
+        
+        
         DBService.manager.addFacebookUser()
         self.dismiss(animated: true, completion: nil)
     }
@@ -212,6 +238,7 @@ extension LoginViewController: FirebaseAuthServiceDelegate {
     }
 }
 
+// MARK:- Image Picker delegate functions
 extension LoginViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -237,5 +264,12 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("logged out facebook")
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

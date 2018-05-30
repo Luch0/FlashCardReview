@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		49E6654ED71966C448688259 /* Pods_FlashCardReviewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F5FE5EB603D68CCE38FBD /* Pods_FlashCardReviewTests.framework */; };
 		B5D1788D6F8454F0471FE407 /* Pods_FlashCardReviewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 376E050C7AE96DD136DA1B04 /* Pods_FlashCardReviewUITests.framework */; };
+		E222D499205AC11200E0E45B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E222D498205AC11100E0E45B /* GoogleService-Info.plist */; };
 		E25BB57720324834004489C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25BB57620324834004489C9 /* AppDelegate.swift */; };
 		E25BB57F20324834004489C9 /* FlashCardReview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E25BB57D20324834004489C9 /* FlashCardReview.xcdatamodeld */; };
 		E25BB58120324834004489C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25BB58020324834004489C9 /* Assets.xcassets */; };
@@ -38,7 +39,6 @@
 		E2FEC9CD20329A4F005123B5 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEC9CC20329A4F005123B5 /* AppUser.swift */; };
 		E2FEC9CF20329E96005123B5 /* LoginContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEC9CE20329E96005123B5 /* LoginContainerView.swift */; };
 		E2FEC9D320329EC0005123B5 /* CreateUserContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEC9D220329EC0005123B5 /* CreateUserContainerView.swift */; };
-		E2FEC9D82032A9F3005123B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2FEC9D72032A9F3005123B5 /* GoogleService-Info.plist */; };
 		E339E10C6C28C84E4308927C /* Pods_FlashCardReview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C80B6CD2EE37DF256EA3F41 /* Pods_FlashCardReview.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +67,7 @@
 		8C80B6CD2EE37DF256EA3F41 /* Pods_FlashCardReview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCardReview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7F5FE5EB603D68CCE38FBD /* Pods_FlashCardReviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCardReviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CBE77064BE3401F3F37447 /* Pods-FlashCardReview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCardReview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCardReview/Pods-FlashCardReview.debug.xcconfig"; sourceTree = "<group>"; };
+		E222D498205AC11100E0E45B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E25BB57320324834004489C9 /* FlashCardReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCardReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25BB57620324834004489C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E25BB57E20324834004489C9 /* FlashCardReview.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlashCardReview.xcdatamodel; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		E2FEC9CC20329A4F005123B5 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		E2FEC9CE20329E96005123B5 /* LoginContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContainerView.swift; sourceTree = "<group>"; };
 		E2FEC9D220329EC0005123B5 /* CreateUserContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserContainerView.swift; sourceTree = "<group>"; };
-		E2FEC9D72032A9F3005123B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E6B2B79E24B75E7E1EF581AF /* Pods-FlashCardReview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCardReview.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCardReview/Pods-FlashCardReview.release.xcconfig"; sourceTree = "<group>"; };
 		ED0D7CF6D7AEE69D99C56839 /* Pods-FlashCardReviewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCardReviewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlashCardReviewTests/Pods-FlashCardReviewTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,7 +189,7 @@
 				E25BB5A920324877004489C9 /* Models */,
 				E25BB5A720324857004489C9 /* Supporting Files */,
 				E25BB58520324834004489C9 /* Info.plist */,
-				E2FEC9D72032A9F3005123B5 /* GoogleService-Info.plist */,
+				E222D498205AC11100E0E45B /* GoogleService-Info.plist */,
 				E25BB57D20324834004489C9 /* FlashCardReview.xcdatamodeld */,
 			);
 			path = FlashCardReview;
@@ -310,7 +310,6 @@
 				E25BB57020324834004489C9 /* Frameworks */,
 				E25BB57120324834004489C9 /* Resources */,
 				78A1C7BC1C32BCC5BC1FC13E /* [CP] Embed Pods Frameworks */,
-				018826E757A29F5B392B1234 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,8 +328,6 @@
 				E25BB58620324834004489C9 /* Sources */,
 				E25BB58720324834004489C9 /* Frameworks */,
 				E25BB58820324834004489C9 /* Resources */,
-				3FB418073DB02233F8028EFC /* [CP] Embed Pods Frameworks */,
-				DE978BBCCC8F440EBA6841DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,8 +347,6 @@
 				E25BB59120324834004489C9 /* Sources */,
 				E25BB59220324834004489C9 /* Frameworks */,
 				E25BB59320324834004489C9 /* Resources */,
-				49B00B7693F58357D795836B /* [CP] Embed Pods Frameworks */,
-				DA8B65289A939E376C5DE54C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -370,7 +365,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Luis Calle";
 				TargetAttributes = {
 					E25BB57220324834004489C9 = {
@@ -415,8 +410,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E25BB58420324834004489C9 /* LaunchScreen.storyboard in Resources */,
+				E222D499205AC11200E0E45B /* GoogleService-Info.plist in Resources */,
 				E25BB58120324834004489C9 /* Assets.xcassets in Resources */,
-				E2FEC9D82032A9F3005123B5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,21 +432,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		018826E757A29F5B392B1234 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReview/Pods-FlashCardReview-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3E1AC0E43D93F383B3C9C3EF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,36 +448,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3FB418073DB02233F8028EFC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReviewTests/Pods-FlashCardReviewTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		49B00B7693F58357D795836B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReviewUITests/Pods-FlashCardReviewUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		78A1C7BC1C32BCC5BC1FC13E /* [CP] Embed Pods Frameworks */ = {
@@ -576,36 +526,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DA8B65289A939E376C5DE54C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReviewUITests/Pods-FlashCardReviewUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE978BBCCC8F440EBA6841DA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlashCardReviewTests/Pods-FlashCardReviewTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -700,6 +620,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -707,6 +628,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -757,6 +679,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -764,6 +687,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

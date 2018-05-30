@@ -42,9 +42,20 @@ extension StorageService {
         
         uploadTask.observe(.success) { snapshot in
             // Upload completed successfully
-            let imageURL = String(describing: snapshot.metadata!.downloadURL()!)
-            DBService.manager.getUsers().child("\(userID)/userImageURL").setValue(imageURL)
-            self.firebaseAuthService.signOut()
+            
+            snapshot.reference.downloadURL(completion: { (url, error) in
+                if let error = error {
+                    print("error downloading url: \(error.localizedDescription)")
+                } else if let url = url {
+                    DBService.manager.getUsers().child("\(userID)/userImageURL").setValue(url.absoluteString)
+                    print("\(url.absoluteString)")
+                }
+                self.firebaseAuthService.signOut()
+            })
+            
+            //let imageURL = String(describing: snapshot.metadata!.downloadURL()!)
+            //DBService.manager.getUsers().child("\(userID)/userImageURL").setValue(imageURL)
+            //self.firebaseAuthService.signOut()
         }
         
         uploadTask.observe(.failure) { snapshot in

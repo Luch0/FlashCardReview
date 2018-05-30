@@ -46,8 +46,8 @@ class FirebaseAuthService: NSObject {
             if let error = error {
                 self.delegate?.didFailCreatingUser?(self, error: error)
             } else if let user = user {
-                let changeRequest = user.createProfileChangeRequest()
-                let stringArray = user.email!.components(separatedBy: "@")
+                let changeRequest = user.user.createProfileChangeRequest()
+                let stringArray = user.user.email!.components(separatedBy: "@")
                 let username = stringArray[0]
                 changeRequest.displayName = username
                 changeRequest.commitChanges(completion: {(error) in
@@ -56,7 +56,7 @@ class FirebaseAuthService: NSObject {
                     } else {
                         print("changeRequest was successful for username: \(username)")
                         DBService.manager.addUser(firstName: firstName, lastName: lastName, userImage: userImage)
-                        self.delegate?.didCreateUser?(self, user: user)
+                        self.delegate?.didCreateUser?(self, user: user.user)
                     }
                 })
             }
@@ -93,22 +93,39 @@ class FirebaseAuthService: NSObject {
             if let error = error {
                 self.delegate?.didFailSignIn?(self, error: error)
             } else if let user = user {
-                self.delegate?.didSignIn?(self, user: user)
+                self.delegate?.didSignIn?(self, user: user.user)
             }
         }
     }
     
+    
     public func signInWithFacebook(with credential: AuthCredential) {
-        Auth.auth().signIn(with: credential) { (user, error) in
+        Auth.auth().signInAndRetrieveData(with: credential) { (authDataResult, error) in
             if let error = error {
                 self.delegate?.didFailSignInFacebook?(self, error: error)
                 print("error: \(error.localizedDescription)")
                 return
             }
-            self.delegate?.didSignInFacebook?(self, user: user!)
-            print("User is signed in: \(user!)")
+            self.delegate?.didSignInFacebook?(self, user: authDataResult!.user)
+            print("User is signed in: \(authDataResult!.user)")
         }
     }
+    
+    
+    
+    
+    
+//    public func signInWithFacebook(with credential: AuthCredential) {
+//        Auth.auth().signIn(with: credential) { (user, error) in
+//            if let error = error {
+//                self.delegate?.didFailSignInFacebook?(self, error: error)
+//                print("error: \(error.localizedDescription)")
+//                return
+//            }
+//            self.delegate?.didSignInFacebook?(self, user: user!)
+//            print("User is signed in: \(user!)")
+//        }
+//    }
     
     
 }

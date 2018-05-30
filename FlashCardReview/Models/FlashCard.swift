@@ -8,7 +8,7 @@
 
 import Foundation
 
-class FlashCard {
+struct FlashCard {
     let flashCardID: String
     let userID: String
     let username: String

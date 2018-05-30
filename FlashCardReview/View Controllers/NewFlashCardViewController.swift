@@ -31,6 +31,8 @@ class NewFlashCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        newFlashCardView.questionTextView.delegate = self
+        newFlashCardView.answerTextView.delegate = self
         view.addSubview(newFlashCardView)
         setupNavBar()
     }
@@ -61,4 +63,16 @@ class NewFlashCardViewController: UIViewController {
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
     }
+}
+
+extension NewFlashCardViewController: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
 }

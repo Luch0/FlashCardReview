@@ -56,7 +56,7 @@ class FlashCardCategoriesViewController: UIViewController {
         let addAction = UIAlertAction(title: "Add", style: .default) {alert in
             let userTexInput = alertController.textFields![0].text!
             guard !userTexInput.isEmpty else {
-                self.showAlert(title: "Error", message: "Must enter a new category name")
+                self.showAlert(title: "Error", message: "Must enter a valid category name")
                 return
             }
             DBService.manager.addCategory(name: userTexInput)

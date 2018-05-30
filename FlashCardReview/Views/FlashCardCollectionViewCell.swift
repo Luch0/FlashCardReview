@@ -151,9 +151,13 @@ class FlashCardCollectionViewCell: UICollectionViewCell {
     
     public func configureCell(flashCard: FlashCard) {
         self.questionTextView.text = flashCard.question
+        self.questionTextView.isHidden = false
         self.usernameLabel.text = flashCard.username
+        self.usernameLabel.isHidden = false
         self.dateLabel.text = flashCard.dateCreated
+        self.dateLabel.isHidden = false
         self.answerTextView.text = flashCard.answer
+        self.answerTextView.isHidden = true
     }
     
 }

@@ -9,14 +9,6 @@
 import Foundation
 import Firebase
 
-
-//let flashCardID: String
-//let userID: String
-//let question: String
-//let answer: String
-//let categoryID: String
-//let dateCreated: String
-
 extension DBService {
     public func addFlashCard(question: String, answer: String, categoryID: String) {
         let childByAutoId = DBService.manager.getFlashCards().childByAutoId()
