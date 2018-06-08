@@ -81,7 +81,7 @@ DEPENDENCIES:
   - SnapKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Bolts
     - FacebookCore
     - FacebookLogin
@@ -127,4 +127,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 300fcf6ee57ee9314e3444b5ce987b60fb1166ae
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

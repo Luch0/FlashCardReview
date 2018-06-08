@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class LoginContainerView: UIView {
     
@@ -73,6 +75,11 @@ class LoginContainerView: UIView {
         button.backgroundColor = .clear
         return button
     }()
+    
+    lazy var facebookLoginButton: FBSDKLoginButton = {
+        let loginButton = FBSDKLoginButton()
+        return loginButton
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -96,6 +103,7 @@ class LoginContainerView: UIView {
         setupEmailLoginTextField()
         setupLoginButton()
         setupForgotPasswordButton()
+        setupFBLoginButton()
     }
     
     private func setupPasswordTextField() {
@@ -147,6 +155,14 @@ class LoginContainerView: UIView {
             make.top.equalTo(loginButton.snp.bottom).offset(4)
             make.centerX.equalTo(loginButton.snp.centerX)
 
+        }
+    }
+    
+    private func setupFBLoginButton() {
+        addSubview(facebookLoginButton)
+        facebookLoginButton.snp.makeConstraints { (make) in
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-8)
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
     }
 

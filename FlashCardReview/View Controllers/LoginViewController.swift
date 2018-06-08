@@ -25,7 +25,8 @@ class LoginViewController: UIViewController {
         loginView.createUserContainerView.isHidden = true
         imagePicker.delegate = self
         firebaseAuthService.delegate = self
-        loginView.facebookLoginButton.delegate = self
+        //loginView.facebookLoginButton.delegate = self
+        loginView.loginContainerView.facebookLoginButton.delegate = self
         setTextFieldsDelegates()
         view.addSubview(loginView)
         setupButtonsActions()

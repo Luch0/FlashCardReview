@@ -8,8 +8,6 @@
 
 import UIKit
 import SnapKit
-import FBSDKLoginKit
-import FBSDKCoreKit
 
 class LoginView: UIView {
     
@@ -45,10 +43,10 @@ class LoginView: UIView {
         return button
     }()
     
-    lazy var facebookLoginButton: FBSDKLoginButton = {
-        let loginButton = FBSDKLoginButton()
-        return loginButton
-    }()
+//    lazy var facebookLoginButton: FBSDKLoginButton = {
+//        let loginButton = FBSDKLoginButton()
+//        return loginButton
+//    }()
 
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -71,7 +69,7 @@ class LoginView: UIView {
         setupLoginContainerView()
         setupLoginContainerButton()
         setupCreateAccountContainerButton()
-        setupFBLoginButton()
+        //setupFBLoginButton()
     }
     
     private func setupAppTitleLabel() {
@@ -118,12 +116,12 @@ class LoginView: UIView {
         }
     }
     
-    private func setupFBLoginButton() {
-        addSubview(facebookLoginButton)
-        facebookLoginButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-8)
-            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-        }
-    }
+//    private func setupFBLoginButton() {
+//        addSubview(facebookLoginButton)
+//        facebookLoginButton.snp.makeConstraints { (make) in
+//            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-8)
+//            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+//        }
+//    }
 
 }
