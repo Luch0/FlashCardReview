@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import FBSDKLoginKit
 import FBSDKCoreKit
+import GoogleSignIn
 
 class LoginContainerView: UIView {
     
@@ -80,6 +81,11 @@ class LoginContainerView: UIView {
         let loginButton = FBSDKLoginButton()
         return loginButton
     }()
+    
+    lazy var googleLoginButton: GIDSignInButton = {
+        let loginButton = GIDSignInButton()
+        return loginButton
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -104,6 +110,7 @@ class LoginContainerView: UIView {
         setupLoginButton()
         setupForgotPasswordButton()
         setupFBLoginButton()
+        setupGoogleLoginButton()
     }
     
     private func setupPasswordTextField() {
@@ -161,7 +168,15 @@ class LoginContainerView: UIView {
     private func setupFBLoginButton() {
         addSubview(facebookLoginButton)
         facebookLoginButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-8)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-16)
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+        }
+    }
+    
+    private func setupGoogleLoginButton() {
+        addSubview(googleLoginButton)
+        googleLoginButton.snp.makeConstraints { (make) in
+            make.bottom.equalTo(facebookLoginButton.snp.top).offset(-8)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
     }

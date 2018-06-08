@@ -24,6 +24,10 @@ import FBSDKCoreKit
     @objc optional func didFailSignInFacebook(_ authService: FirebaseAuthService, error: Error)
     @objc optional func didSignInFacebook(_ authService: FirebaseAuthService, user: User)
     
+    // sign in google delegate protocols
+    @objc optional func didFailSignInGoogle(_ authService: FirebaseAuthService, error: Error)
+    @objc optional func didSignInGoogle(_ authService: FirebaseAuthService, user: User)
+    
     // sign out delegate protocols
     @objc optional func didFailSigningOut(_ authService: FirebaseAuthService, error: Error)
     @objc optional func didSignOut(_ authService: FirebaseAuthService)
@@ -111,8 +115,17 @@ class FirebaseAuthService: NSObject {
         }
     }
     
-    
-    
+    public func signInWithGoogle(with credential: AuthCredential) {
+        Auth.auth().signInAndRetrieveData(with: credential) { (authDataResult, error) in
+            if let error = error {
+                self.delegate?.didFailSignInGoogle?(self, error: error)
+                print("error: \(error.localizedDescription)")
+                return
+            }
+            self.delegate?.didSignInGoogle?(self, user: authDataResult!.user)
+            print("User is signed in: \(authDataResult!.user)")
+        }
+    }
     
     
 //    public func signInWithFacebook(with credential: AuthCredential) {

@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 import FBSDKCoreKit
+import GoogleSignIn
 
 class ProfileViewController: UIViewController {
 
@@ -81,6 +82,10 @@ extension ProfileViewController: FirebaseAuthServiceDelegate {
         if FBSDKAccessToken.current() != nil {
             let loginManager = FBSDKLoginManager()
             loginManager.logOut()
+        }
+        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            GIDSignIn.sharedInstance().signOut()
+            print("Logged out of Google")
         }
         userFlashCards.removeAll()
         let loginVC = LoginViewController()

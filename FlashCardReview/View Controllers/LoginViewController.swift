@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FBSDKLoginKit
 import FBSDKCoreKit
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
 
@@ -22,6 +23,11 @@ class LoginViewController: UIViewController {
     var counter = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
+        //GIDSignIn.sharedInstance().signIn()
+        
         loginView.createUserContainerView.isHidden = true
         imagePicker.delegate = self
         firebaseAuthService.delegate = self
@@ -220,13 +226,21 @@ extension LoginViewController: FirebaseAuthServiceDelegate {
 //            }
 //        })
         
-        
-        
         DBService.manager.addFacebookUser()
         self.dismiss(animated: true, completion: nil)
     }
     
     func didFailSignInFacebook(_ authService: FirebaseAuthService, error: Error) {
+        showAlert(title: error.localizedDescription, message: nil)
+    }
+    
+    func didSignInGoogle(_ authService: FirebaseAuthService, user: User) {
+        // add google user
+        DBService.manager.addGoogleUser()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func didFailSignInGoogle(_ authService: FirebaseAuthService, error: Error) {
         showAlert(title: error.localizedDescription, message: nil)
     }
     
@@ -273,4 +287,27 @@ extension LoginViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+}
+
+extension LoginViewController: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        if let error = error {
+            print("error login in with google: \(error.localizedDescription)")
+            return
+        }
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        // ...
+        firebaseAuthService.signInWithGoogle(with: credential)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+        print("logged out google")
+    }
+}
+
+extension LoginViewController: GIDSignInUIDelegate {
 }

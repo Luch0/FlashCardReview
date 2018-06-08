@@ -15,6 +15,7 @@ target 'FlashCardReview' do
     pod 'FacebookCore'
     pod 'FacebookLogin'
     pod 'FacebookShare'
+    pod 'GoogleSignIn'
     
 
   target 'FlashCardReviewTests' do

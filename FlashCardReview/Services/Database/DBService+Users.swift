@@ -41,6 +41,21 @@ extension DBService {
         }
     }
     
+    public func addGoogleUser() {
+        let user = DBService.manager.getUsers().child(FirebaseAuthService.getCurrentUser()!.uid)
+        user.setValue(["userID"      : FirebaseAuthService.getCurrentUser()!.uid,
+                       "username"    : FirebaseAuthService.getCurrentUser()!.displayName!,
+                       "firstName"   : "",
+                       "lastName"    : "",
+                       "dateJoined"  : formatDate(with: Date())]) { (error, dbRef) in
+                        if let error = error {
+                            print("addUser error: \(error.localizedDescription)")
+                        } else {
+                            print("user added @ database reference: \(dbRef)")
+                        }
+        }
+    }
+    
     public func getUserImageURL(userID: String, completionHandler: @escaping (AppUser?) -> Void) {
         let ref = DBService.manager.getUsers()
         ref.observe(.value) { (snapshot) in
