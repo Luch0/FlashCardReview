@@ -160,7 +160,7 @@ class CreateUserContainerView: UIView {
     }
     
     private func setupViews() {
-        setupProfileImageView()
+        //setupProfileImageView()
         setupEmailLoginTextField()
         setupEmailAddressLabel()
         setupPasswordTextField()
@@ -172,17 +172,18 @@ class CreateUserContainerView: UIView {
         setupFirstNameLabel()
         setupLastNameTextField()
         setupLastNameLabel()
+        setupProfileImageView()
     }
     
-    private func setupProfileImageView() {
-        addSubview(profileImageView)
-        profileImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(8)
-            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-            make.width.equalTo(safeAreaLayoutGuide.snp.width).multipliedBy(0.25)
-            make.height.equalTo(profileImageView.snp.width)
-        }
-    }
+//    private func setupProfileImageView() {
+//        addSubview(profileImageView)
+//        profileImageView.snp.makeConstraints { (make) in
+//            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(8)
+//            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+//            make.width.equalTo(safeAreaLayoutGuide.snp.width).multipliedBy(0.25)
+//            make.height.equalTo(profileImageView.snp.width)
+//        }
+//    }
     
     private func setupEmailLoginTextField() {
         addSubview(emailLoginTextField)
@@ -274,9 +275,19 @@ class CreateUserContainerView: UIView {
     private func setupSignUpButton() {
         addSubview(signUpButton)
         signUpButton.snp.makeConstraints { (make) in
-            make.top.equalTo(verifyPasswordLabel.snp.bottom).offset(10)
+            make.top.equalTo(verifyPasswordLabel.snp.bottom).offset(16)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.width.equalTo(safeAreaLayoutGuide.snp.width).multipliedBy(0.3)
+        }
+    }
+    
+    private func setupProfileImageView() {
+        addSubview(profileImageView)
+        profileImageView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(firstNameTextField.snp.top).offset(-16)
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+            make.width.equalTo(safeAreaLayoutGuide.snp.width).multipliedBy(0.25)
+            make.height.equalTo(profileImageView.snp.width)
         }
     }
 
